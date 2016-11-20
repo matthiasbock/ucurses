@@ -1,0 +1,51 @@
+
+#include "io.h"
+
+void setfgcolor(uint8_t color)
+{
+    switch(color)
+    {
+        case YELLOW:
+            printf(ANSI_FG_YELLOW);
+            break;
+
+        case WHITE:
+            printf(ANSI_FG_WHITE);
+            break;
+
+        default:
+            break;
+    }
+}
+
+void setbgcolor(uint8_t color)
+{
+    switch(color)
+    {
+        case YELLOW:
+            printf(ANSI_BG_YELLOW);
+            break;
+
+        case BLUE:
+            printf(ANSI_BG_BLUE);
+            break;
+
+        default:
+            break;
+    }
+}
+
+void gotoxy(uint8_t x, uint8_t y)
+{
+
+}
+
+void printc(char c)
+{
+    printf(&c);
+}
+
+void prints(char* s)
+{
+    printf(s);
+}

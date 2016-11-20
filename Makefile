@@ -64,6 +64,9 @@ all: main.elf
 main.elf: sdk/nrf51_startup.o nordic/system_nrf51.o sdk/strings.o sdk/fifo.o sdk/uart.o sdk/delay.o main.o 
 	$(LD) $(LDFLAGS) $^ -o $@
 
+test.elf: test.c box.c io.c
+	colorgcc -Wall $^ -o test.elf
+
 
 define LOAD_SOFTDEVICE_COMMAND
 target remote localhost:3333
@@ -95,5 +98,5 @@ clean:
 OPENOCD_CFG_DIR = debug/
 # workaround: problems because the folder is named like the target in the subfolder's Makefile
 .PHONY: debug
-include debug/Makefile
+include sdk/debug/Makefile
 
