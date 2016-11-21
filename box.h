@@ -22,4 +22,11 @@ typedef struct
 
 void box_draw(box_t*);
 
+#define BOX_CORNER_LOWER_RIGHT "\x6a"
+#define BOX_CORNER_UPPER_RIGHT "\x6b"
+#define BOX_CORNER_UPPER_LEFT  "\x6c"
+#define BOX_CORNER_LOWER_LEFT  "\x6d"
+#define BOX_EDGE_HORIZONTAL    "\x71"
+#define BOX_EDGE_VERTICAL      "\x78"
+
 #endif

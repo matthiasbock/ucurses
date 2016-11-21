@@ -37,7 +37,7 @@ void setbgcolor(uint8_t color)
 
 void gotoxy(uint8_t x, uint8_t y)
 {
-
+    printf(ESC "[%d;%dH", y, x);
 }
 
 void printc(char c)

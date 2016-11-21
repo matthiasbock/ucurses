@@ -1,9 +1,15 @@
 /**
  * ANSI escape codes
+ *
+ * https://en.wikipedia.org/wiki/ANSI_escape_code
+ * http://bluesock.org/~willg/dev/ansi.html
+ * http://ascii-table.com/ansi-escape-sequences-vt-100.php
  */
 
 #ifndef ANSI_H
 #define ANSI_H
+
+#define ESC             "\x1b"
 
 #define WHITE               47
 #define YELLOW              33

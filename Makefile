@@ -65,7 +65,7 @@ main.elf: sdk/nrf51_startup.o nordic/system_nrf51.o sdk/strings.o sdk/fifo.o sdk
 	$(LD) $(LDFLAGS) $^ -o $@
 
 test.elf: test.c box.c io.c
-	colorgcc -Wall $^ -o test.elf
+	colorgcc -Wall -std=gnu11 $^ -o test.elf
 
 
 define LOAD_SOFTDEVICE_COMMAND
