@@ -95,7 +95,7 @@ clean:
 #
 # Debugger
 #
-OPENOCD_CFG_DIR = debug/
+OPENOCD_CFG_DIR = sdk/debug/
 # workaround: problems because the folder is named like the target in the subfolder's Makefile
 .PHONY: debug
 include sdk/debug/Makefile
