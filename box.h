@@ -1,6 +1,5 @@
 /**
- * TUI window
- * with double-lined boundaries
+ * TUI box/window
  *
  * Author: Matthias Bock
  * License: GNU GPL v3

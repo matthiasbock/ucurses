@@ -9,6 +9,10 @@ void setfgcolor(uint8_t color)
             printf(ANSI_FG_YELLOW);
             break;
 
+        case BLUE:
+            printf(ANSI_FG_BLUE);
+            break;
+
         case WHITE:
             printf(ANSI_FG_WHITE);
             break;
@@ -28,6 +32,10 @@ void setbgcolor(uint8_t color)
 
         case BLUE:
             printf(ANSI_BG_BLUE);
+            break;
+
+        case WHITE:
+            printf(ANSI_BG_WHITE);
             break;
 
         default:
