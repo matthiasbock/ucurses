@@ -17,6 +17,8 @@ void main()
     main_window.fgcolor = WHITE;
     main_window.bgcolor = BLUE;
 
+    box_draw(&main_window);
+
     slider.x1 = 10;
     slider.x2 = 20;
     slider.y  = 5;
@@ -25,8 +27,6 @@ void main()
     slider.value = 5;
     slider.fgcolor = WHITE;
     slider.bgcolor = BLUE;
-
-    box_draw(&main_window);
 
     slider_draw(&slider);
 
