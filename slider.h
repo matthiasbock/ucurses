@@ -10,6 +10,7 @@
 #ifndef SLIDER_H
 #define SLIDER_H
 
+#include <stdint.h>
 #include "io.h"
 
 typedef struct

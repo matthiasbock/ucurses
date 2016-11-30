@@ -9,36 +9,36 @@ void box_draw(
     setbgcolor(box->bgcolor);
 
     gotoxy(box->x1, box->y1);
-    printf(ANSI_BEGIN_GRAPHICAL);
+    prints(ANSI_BEGIN_GRAPHICAL);
 
-    printf(BOX_CORNER_UPPER_LEFT);
+    prints(BOX_CORNER_UPPER_LEFT);
     for (uint8_t x=box->x1+1; x<box->x2; x++)
     {
-        printf(BOX_EDGE_HORIZONTAL);
+        prints(BOX_EDGE_HORIZONTAL);
     }
-    printf(BOX_CORNER_UPPER_RIGHT);
+    prints(BOX_CORNER_UPPER_RIGHT "\n");
 
     for (uint8_t y=box->y1+1; y<box->y2; y++)
     {
         gotoxy(box->x1, y);
-        printf(BOX_EDGE_VERTICAL);
+        prints(BOX_EDGE_VERTICAL);
 
         for (uint8_t x=box->x1+1; x<box->x2; x++)
         {
-            printf(" ");
+            prints(BOX_SPACE);
         }
 
         gotoxy(box->x2, y);
-        printf(BOX_EDGE_VERTICAL);
+        prints(BOX_EDGE_VERTICAL "\n");
     }
 
     gotoxy(box->x1, box->y2);
-    printf(BOX_CORNER_LOWER_LEFT);
+    prints(BOX_CORNER_LOWER_LEFT);
     for (uint8_t x=box->x1+1; x<box->x2; x++)
     {
-        printf(BOX_EDGE_HORIZONTAL);
+        prints(BOX_EDGE_HORIZONTAL);
     }
-    printf(BOX_CORNER_LOWER_RIGHT);
+    prints(BOX_CORNER_LOWER_RIGHT "\n");
 
-    printf(ANSI_END_GRAPHICAL);
+    prints(ANSI_END_GRAPHICAL);
 }

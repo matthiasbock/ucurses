@@ -6,32 +6,42 @@
 
 #include "ansi.h"
 
-#ifndef MICROCONTROLLER
+#ifdef NRF51
+// use UART console on microcontroller
+#include <uart.h>
+#include <nrf_delay.h>
+#else
+// use standard out on PC
 #include <stdio.h>
 #endif
 
 /**
- * Set foreground color
+ * @brief Set foreground color
  */
 void setfgcolor(uint8_t);
 
 /**
- * Set background color
+ * @brief Set background color
  */
 void setbgcolor(uint8_t);
 
 /**
- * Move cursor to position
+ * @brief Move cursor to position
  */
 void gotoxy(uint8_t, uint8_t);
 
 /**
- * Print character to terminal
+ * @brief Convert byte to three-digit-string
+ */
+char* inttostr(uint8_t i);
+
+/**
+ * @brief Print character to terminal
  */
 void printc(char);
 
 /**
- * Print string to terminal
+ * @brief Print string to terminal
  */
 void prints(char*);
 
