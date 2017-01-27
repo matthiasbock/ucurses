@@ -61,12 +61,14 @@ SOFTDEVICE = nordic/softdevice/s110_nrf51822_7.3.0_softdevice.hex
 
 all: main.elf
 
-main.elf: sdk/nrf51_startup.o nordic/system_nrf51.o sdk/strings.o sdk/fifo.o sdk/uart.o sdk/delay.o main.o 
-	$(LD) $(LDFLAGS) $^ -o $@
+test: test.elf
+	./test.elf
 
 test.elf: test.c box.c slider.c io.c
 	colorgcc -Wall -std=gnu11 $^ -o test.elf
 
+main.elf: sdk/nrf51_startup.o nordic/system_nrf51.o sdk/strings.o sdk/fifo.o sdk/uart.o sdk/delay.o main.o
+	$(LD) $(LDFLAGS) $^ -o $@
 
 define LOAD_SOFTDEVICE_COMMAND
 target remote localhost:3333
@@ -79,7 +81,7 @@ export LOAD_SOFTDEVICE_COMMAND
 softdevice:
 	echo "$$LOAD_SOFTDEVICE_COMMAND" | $(GDB) $(SOFTDEVICE)
 
-%.o: %.c %s
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 %.hex: %.elf
