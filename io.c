@@ -1,7 +1,14 @@
 
+#include "ucurses_config.h"
 #include "io.h"
 
-void setfgcolor(uint8_t color)
+/*
+ * Methods, which are only working
+ * with an ANSI-compatible terminal
+ */
+#ifdef TERMINAL_TYPE_ANSI
+
+void ansi_setfgcolor(uint8_t color)
 {
     switch(color)
     {
@@ -22,7 +29,7 @@ void setfgcolor(uint8_t color)
     }
 }
 
-void setbgcolor(uint8_t color)
+void ansi_setbgcolor(uint8_t color)
 {
     switch(color)
     {
@@ -43,7 +50,7 @@ void setbgcolor(uint8_t color)
     }
 }
 
-void gotoxy(uint8_t x, uint8_t y)
+void ansi_gotoxy(uint8_t x, uint8_t y)
 {
     prints(ESC "[");
     prints(inttostr(y));
@@ -51,6 +58,8 @@ void gotoxy(uint8_t x, uint8_t y)
     prints(inttostr(x));
     printc('H');
 }
+
+#endif // TERMINAL_TYPE_ANSI
 
 // static memory allocation
 uint8_t inttostr_buffer[5];

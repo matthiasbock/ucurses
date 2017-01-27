@@ -10,11 +10,8 @@
 
 #include <stdint.h>
 
+#include "ucurses_config.h"
 #include "io.h"
-
-#define BOX_STYLE_SIMPLE
-//#define BOX_STYLE_ANSI
-//#define BOX_STYLE_UTF8
 
 typedef struct
 {

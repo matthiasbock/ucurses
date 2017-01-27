@@ -1,12 +1,13 @@
 
+#include "ucurses_config.h"
 #include "slider.h"
 
 void slider_draw(slider_t* slider)
 {
-    setfgcolor(slider->bgcolor);
-    setbgcolor(slider->fgcolor);
+    ansi_setfgcolor(slider->bgcolor);
+    ansi_setbgcolor(slider->fgcolor);
 
-    gotoxy(slider->x1, slider->y);
+    ansi_gotoxy(slider->x1, slider->y);
     prints(ANSI_BEGIN_GRAPHICAL);
     prints(SLIDER_ARROW_LEFT);
 
@@ -20,7 +21,7 @@ void slider_draw(slider_t* slider)
             prints(SLIDER_MARKER);
     }
 
-    gotoxy(slider->x2, slider->y);
+    ansi_gotoxy(slider->x2, slider->y);
     prints(SLIDER_ARROW_RIGHT);
 
     prints(ANSI_END_GRAPHICAL);

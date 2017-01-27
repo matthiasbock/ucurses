@@ -8,7 +8,7 @@
 box_t main_window;
 slider_t slider;
 
-void main()
+int main()
 {
     main_window.x1 = 1;
     main_window.y1 = 1;
@@ -33,4 +33,6 @@ void main()
     // reset colors
     printf(ANSI_RESET);
     printf("\n");
+
+    return 0;
 }
