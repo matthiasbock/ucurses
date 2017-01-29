@@ -15,9 +15,9 @@
 
 typedef struct
 {
-    uint8_t fgcolor;
-    uint8_t bgcolor;
-    uint8_t x1, y1, x2, y2;
+    char*   color;
+    uint8_t x1, y1;
+    uint8_t x2, y2;
 } box_t;
 
 void box_draw(box_t*);

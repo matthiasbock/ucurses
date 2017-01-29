@@ -5,8 +5,7 @@ void box_draw(
         box_t* box
         )
 {
-    ansi_setfgcolor(box->fgcolor);
-    ansi_setbgcolor(box->bgcolor);
+    ansi_setcolor(box->color);
 
     ansi_gotoxy(box->x1, box->y1);
     prints(ANSI_BEGIN_GRAPHICAL);

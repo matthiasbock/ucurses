@@ -16,19 +16,14 @@
 #endif
 
 /**
- * @brief Set foreground color
+ * @brief Set foreground and/or background color
  */
-void setfgcolor(uint8_t);
-
-/**
- * @brief Set background color
- */
-void setbgcolor(uint8_t);
+void ansi_setcolor(char*);
 
 /**
  * @brief Move cursor to position
  */
-void gotoxy(uint8_t, uint8_t);
+void ansi_gotoxy(uint8_t, uint8_t);
 
 /**
  * @brief Convert byte to three-digit-string

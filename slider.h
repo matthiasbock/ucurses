@@ -15,8 +15,7 @@
 
 typedef struct
 {
-    uint8_t fgcolor;
-    uint8_t bgcolor;
+    char*   color;
     uint8_t value_min;
     uint8_t value_max;
     uint8_t value;

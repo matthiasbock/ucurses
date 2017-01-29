@@ -11,10 +11,6 @@
 
 #define ESC             "\x1b"
 
-#define WHITE               47
-#define YELLOW              33
-#define BLUE                34
-
 #define ANSI_RESET      "\x1b[0m"
 
 #define ANSI_FG_RED     "\x1b[31m"

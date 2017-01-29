@@ -2,10 +2,11 @@
 #include "ucurses_config.h"
 #include "slider.h"
 
-void slider_draw(slider_t* slider)
+void slider_draw(
+    slider_t* slider
+    )
 {
-    ansi_setfgcolor(slider->bgcolor);
-    ansi_setbgcolor(slider->fgcolor);
+    ansi_setcolor(slider->color);
 
     ansi_gotoxy(slider->x1, slider->y);
     prints(ANSI_BEGIN_GRAPHICAL);

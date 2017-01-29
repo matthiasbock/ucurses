@@ -64,7 +64,7 @@ all: main.elf
 test: test.elf
 	./test.elf
 
-test.elf: test.c box.c slider.c io.c
+test.elf: test.c box.c slider.c label.c io.c
 	colorgcc -Wall -std=gnu11 $^ -o test.elf
 
 main.elf: sdk/nrf51_startup.o nordic/system_nrf51.o sdk/strings.o sdk/fifo.o sdk/uart.o sdk/delay.o main.o

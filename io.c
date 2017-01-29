@@ -8,49 +8,10 @@
  */
 #ifdef TERMINAL_TYPE_ANSI
 
-void ansi_setfgcolor(uint8_t color)
+void ansi_setcolor(char* color)
 {
     #ifdef USE_COLORS
-    switch(color)
-    {
-        case YELLOW:
-            prints(ANSI_FG_YELLOW);
-            break;
-
-        case BLUE:
-            prints(ANSI_FG_BLUE);
-            break;
-
-        case WHITE:
-            prints(ANSI_FG_WHITE);
-            break;
-
-        default:
-            break;
-    }
-    #endif
-}
-
-void ansi_setbgcolor(uint8_t color)
-{
-    #ifdef USE_COLORS
-    switch(color)
-    {
-        case YELLOW:
-            prints(ANSI_BG_YELLOW);
-            break;
-
-        case BLUE:
-            prints(ANSI_BG_BLUE);
-            break;
-
-        case WHITE:
-            prints(ANSI_BG_WHITE);
-            break;
-
-        default:
-            break;
-    }
+    prints(color);
     #endif
 }
 
