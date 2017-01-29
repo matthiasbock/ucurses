@@ -10,6 +10,7 @@
 
 void ansi_setfgcolor(uint8_t color)
 {
+    #ifdef USE_COLORS
     switch(color)
     {
         case YELLOW:
@@ -27,10 +28,12 @@ void ansi_setfgcolor(uint8_t color)
         default:
             break;
     }
+    #endif
 }
 
 void ansi_setbgcolor(uint8_t color)
 {
+    #ifdef USE_COLORS
     switch(color)
     {
         case YELLOW:
@@ -48,6 +51,7 @@ void ansi_setbgcolor(uint8_t color)
         default:
             break;
     }
+    #endif
 }
 
 void ansi_gotoxy(uint8_t x, uint8_t y)
@@ -123,7 +127,7 @@ void prints(char* s)
 
 void printc(char c)
 {
-    printf(&c);
+    printf("%c", c);
 }
 
 void prints(char* s)

@@ -7,6 +7,8 @@
  */
 #define TERMINAL_TYPE_ANSI
 
+#define USE_COLORS
+
 /*
  * Configure the box style to use
  */

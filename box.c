@@ -16,7 +16,7 @@ void box_draw(
     {
         prints(BOX_EDGE_HORIZONTAL);
     }
-    prints(BOX_CORNER_UPPER_RIGHT "\n");
+    prints(BOX_CORNER_UPPER_RIGHT);
 
     for (uint8_t y=box->y1+1; y<box->y2; y++)
     {
@@ -29,7 +29,7 @@ void box_draw(
         }
 
         //ansi_gotoxy(box->x2, y);
-        prints(BOX_EDGE_VERTICAL "\n");
+        prints(BOX_EDGE_VERTICAL);
     }
 
     ansi_gotoxy(box->x1, box->y2);
@@ -38,7 +38,7 @@ void box_draw(
     {
         prints(BOX_EDGE_HORIZONTAL);
     }
-    prints(BOX_CORNER_LOWER_RIGHT "\n");
+    prints(BOX_CORNER_LOWER_RIGHT);
 
     prints(ANSI_END_GRAPHICAL);
 }

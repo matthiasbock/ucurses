@@ -1,17 +1,21 @@
+# Temporary
 *~
 .*.swp
 .lock.*
 
+# Outputs
 main
-
 *.o
 *.out
 *.elf
 *.bin
 *.hex
 *.map
+*.log
 
+# IDE files
 .cproject
 .project
 .settings/
 /Debug/
+
