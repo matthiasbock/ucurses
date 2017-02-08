@@ -1,5 +1,4 @@
 
-#include "ucurses_config.h"
 #include "slider.h"
 
 void slider_draw(

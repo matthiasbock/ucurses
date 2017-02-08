@@ -4,6 +4,7 @@
 
 #include <stdint.h>
 
+#include "ucurses_config.h"
 #include "ansi.h"
 
 #ifdef NRF51

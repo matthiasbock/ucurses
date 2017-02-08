@@ -1,5 +1,4 @@
 
-#include "ucurses_config.h"
 #include "checkbox.h"
 
 void checkbox_draw(

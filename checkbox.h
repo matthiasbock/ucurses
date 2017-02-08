@@ -12,6 +12,8 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+
+#include "ucurses_config.h"
 #include "io.h"
 
 typedef struct

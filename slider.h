@@ -11,6 +11,8 @@
 #define SLIDER_H
 
 #include <stdint.h>
+
+#include "ucurses_config.h"
 #include "io.h"
 
 typedef struct
