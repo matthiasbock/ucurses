@@ -18,7 +18,7 @@
 typedef struct
 {
     char*   color;
-    uint8_t x1, x2;
+    uint8_t x;
     uint8_t y;
     char*   label;
 } button_t;

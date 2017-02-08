@@ -71,8 +71,7 @@ struct
         },
     .button =
         {
-            .x1 = 10,
-            .x2 = 20,
+            .x = 10,
             .y = 9,
             .label = "Test",
             .color = ANSI_FG_BLUE ANSI_BG_WHITE,
