@@ -21,4 +21,6 @@ typedef struct
     char*   text;
 } label_t;
 
+void label_draw(label_t*);
+
 #endif
