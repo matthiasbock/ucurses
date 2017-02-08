@@ -15,11 +15,11 @@
 
 typedef struct
 {
-    char*   color;
-    uint8_t value_min;
-    uint8_t value_max;
-    uint8_t value;
-    uint8_t x1, x2, y;
+    char*    color;
+    float    value_min;
+    float    value_max;
+    float    value;
+    uint32_t x1, x2, y;
 } slider_t;
 
 void slider_draw(slider_t*);
