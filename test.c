@@ -18,6 +18,7 @@
 #include "label.h"
 #include "slider.h"
 #include "checkbox.h"
+#include "button.h"
 
 /**
  * A simple test window with:
@@ -32,6 +33,7 @@ struct
     label_t    title;
     slider_t   slider;
     checkbox_t checkbox;
+    button_t   button;
 
 } test =
 {
@@ -41,14 +43,14 @@ struct
             .y1 = 1,
             .x2 = 80,
             .y2 = 25,
-            .color = ANSI_FG_WHITE ANSI_BG_BLUE
-    	},
+            .color = ANSI_FG_WHITE ANSI_BG_BLUE,
+        },
     .title =
         {
             .x = 10,
             .y = 3,
             .text = "ucurses test program",
-            .color = ANSI_FG_CYAN ANSI_BG_BLUE
+            .color = ANSI_FG_CYAN ANSI_BG_BLUE,
         },
     .slider =
         {
@@ -58,14 +60,22 @@ struct
             .value_min = 1,
             .value_max = 10,
             .value = 5,
-            .color = ANSI_FG_BLUE ANSI_BG_WHITE
+            .color = ANSI_FG_BLUE ANSI_BG_WHITE,
         },
     .checkbox =
         {
             .x = 10,
             .y = 7,
             .checked = true,
-            .color = ANSI_FG_WHITE ANSI_BG_BLUE
+            .color = ANSI_FG_WHITE ANSI_BG_BLUE,
+        },
+    .button =
+        {
+            .x1 = 10,
+            .x2 = 20,
+            .y = 9,
+            .label = "Test",
+            .color = ANSI_FG_BLUE ANSI_BG_WHITE,
         },
 };
 
@@ -78,6 +88,7 @@ void tui_draw()
     label_draw(&test.title);
     slider_draw(&test.slider);
     checkbox_draw(&test.checkbox);
+    button_draw(&test.button);
 }
 
 /**
