@@ -66,9 +66,7 @@ char* inttostr(uint8_t i)
 
 void printc(char c)
 {
-    uart_send_char(&c);
-    //nrf_delay_ms(1); // 9600 baud
-    nrf_delay_us(50);
+    uart_send_char(c);
 }
 
 void prints(char* s)
