@@ -20,6 +20,7 @@
 
 #define ESC                 "\x1b"
 
+#define ANSI_CLEAR_LINE     ESC "[K"
 #define ANSI_CLEAR_SCREEN   ESC "[2J"
 
 #define ANSI_RESET          ESC "[0m"
@@ -41,9 +42,13 @@
 #define ANSI_BG_CYAN        ESC "[46m"
 #define ANSI_BG_WHITE       ESC "[47m"
 
-#define ANSI_BEGIN_GRAPHICAL "\e(0"
-#define ANSI_END_GRAPHICAL   "\e(B"
+#define ANSI_BEGIN_GRAPHICAL    ESC "(0"
+#define ANSI_END_GRAPHICAL      ESC "(B"
 
-#define ANSI_MOVE_CURSOR_TO(x, y)   ESC "[" STR(y) ";" STR(x) "H"
+#define ANSI_CURSOR_UP(i)       ESC "[" STR(i) "A"
+#define ANSI_CURSOR_DOWN(i)     ESC "[" STR(i) "B"
+#define ANSI_CURSOR_RIGHT(i)    ESC "[" STR(i) "C"
+#define ANSI_CURSOR_LEFT(i)     ESC "[" STR(i) "D"
+#define ANSI_CURSOR_TO(x, y)    ESC "[" STR(y) ";" STR(x) "H"
 
 #endif
