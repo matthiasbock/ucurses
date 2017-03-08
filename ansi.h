@@ -12,6 +12,12 @@
 #ifndef ANSI_H
 #define ANSI_H
 
+#ifndef STR
+// http://stackoverflow.com/questions/5459868/c-preprocessor-concatenate-int-to-string
+#define STR_HELPER(x) #x
+#define STR(x) STR_HELPER(x)
+#endif
+
 #define ESC                 "\x1b"
 
 #define ANSI_CLEAR_SCREEN   ESC "[2J"
@@ -38,6 +44,6 @@
 #define ANSI_BEGIN_GRAPHICAL "\e(0"
 #define ANSI_END_GRAPHICAL   "\e(B"
 
-#define ANSI_MOVE_CURSOR_TO(x, y)   ESC "[" y ";" x "H"
+#define ANSI_MOVE_CURSOR_TO(x, y)   ESC "[" STR(y) ";" STR(x) "H"
 
 #endif
