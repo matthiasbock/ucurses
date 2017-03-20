@@ -5,7 +5,10 @@ void slider_draw(
     slider_t* slider
     )
 {
-    ansi_setcolor(slider->color);
+    if (slider->selected)
+        ansi_setcolor(slider->color_selected);
+    else
+        ansi_setcolor(slider->color);
 
     ansi_gotoxy(slider->x1, slider->y);
     prints(ANSI_BEGIN_GRAPHICAL);
@@ -25,4 +28,44 @@ void slider_draw(
     prints(SLIDER_ARROW_RIGHT);
 
     prints(ANSI_END_GRAPHICAL);
+}
+
+bool slider_decrement(slider_t* slider)
+{
+    // decrease value
+    if (slider->value == slider->value_min)
+        return false;
+    slider->value -= slider->stepsize;
+    if (slider->value < slider->value_min)
+        slider->value = slider->value_min;
+
+    // redraw element
+    slider_draw(slider);
+    return true;
+}
+
+bool slider_increment(slider_t* slider)
+{
+    // increase value
+    if (slider->value == slider->value_max)
+        return false;
+    slider->value += slider->stepsize;
+    if (slider->value > slider->value_max)
+        slider->value = slider->value_max;
+
+    // redraw element
+    slider_draw(slider);
+    return true;
+}
+
+void slider_select(slider_t* slider)
+{
+    slider->selected = true;
+    slider_draw(slider);
+}
+
+void slider_deselect(slider_t* slider)
+{
+    slider->selected = false;
+    slider_draw(slider);
 }

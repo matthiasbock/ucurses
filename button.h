@@ -17,9 +17,12 @@
 
 typedef struct
 {
-    char*   color;
     uint8_t x;
     uint8_t y;
+    char*   color;
+    char*   color_selected;
+    bool    selected;
+
     char*   label;
 } button_t;
 
