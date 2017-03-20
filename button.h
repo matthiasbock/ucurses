@@ -28,4 +28,8 @@ typedef struct
 
 void button_draw(button_t*);
 
+void button_select(button_t*);
+
+void button_deselect(button_t*);
+
 #endif
