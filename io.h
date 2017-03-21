@@ -10,7 +10,6 @@
 #ifdef NRF51
 // use UART console on microcontroller
 #include <uart.h>
-#include <nrf_delay.h>
 #else
 // use standard out on PC
 #include <stdio.h>
