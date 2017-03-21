@@ -17,47 +17,17 @@ void ansi_setcolor(char* color)
 void ansi_gotoxy(uint8_t x, uint8_t y)
 {
     prints(ANSI_ESC "[");
-    prints(inttostr(y));
+    char s[5];
+    int2str(y, s);
+    prints(s);
     printc(';');
-    prints(inttostr(x));
+    int2str(x, s);
+    prints(s);
     printc('H');
 }
 
 #endif // TERMINAL_TYPE_ANSI
 
-// static memory allocation
-uint8_t inttostr_buffer[5];
-
-char* inttostr(uint8_t i)
-{
-    const uint8_t ascii_zero = 0x30;
-    uint8_t* s;
-    s = inttostr_buffer;
-
-    // hundreds
-    uint8_t hundreds = i / 100;
-    if (hundreds > 0)
-    {
-        *(s++) = ascii_zero + hundreds;
-        i -= hundreds * 100;
-    }
-
-    // tens
-    uint8_t tens = i / 10;
-    if (tens > 0)
-    {
-        *(s++) = ascii_zero + tens;
-        i -= tens * 10;
-    }
-
-    // 0-9
-    *(s++) = ascii_zero + i;
-
-    // string terminator
-    *(s++) = 0x00;
-
-    return inttostr_buffer;
-}
 
 #ifdef NRF51
 /*

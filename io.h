@@ -4,6 +4,9 @@
 
 #include <stdint.h>
 
+// from ushell
+#include <helper.h>
+
 #include "ucurses_config.h"
 #include "ansi.h"
 
