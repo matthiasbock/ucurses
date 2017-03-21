@@ -17,13 +17,13 @@ void button_draw(
     prints(" > ");
 }
 
-void button_select(button_t* button)
+inline void button_select(button_t* button)
 {
     button->selected = true;
     button_draw(button);
 }
 
-void button_deselect(button_t* button)
+inline void button_deselect(button_t* button)
 {
     button->selected = false;
     button_draw(button);

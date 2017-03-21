@@ -28,8 +28,14 @@ typedef struct
 
 void button_draw(button_t*);
 
+/**
+ * Mark button selected and redraw
+ */
 void button_select(button_t*);
 
+/**
+ * Mark button unselected and redraw
+ */
 void button_deselect(button_t*);
 
 #endif

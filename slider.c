@@ -58,13 +58,13 @@ bool slider_increment(slider_t* slider)
     return true;
 }
 
-void slider_select(slider_t* slider)
+inline void slider_select(slider_t* slider)
 {
     slider->selected = true;
     slider_draw(slider);
 }
 
-void slider_deselect(slider_t* slider)
+inline void slider_deselect(slider_t* slider)
 {
     slider->selected = false;
     slider_draw(slider);
