@@ -16,7 +16,7 @@ void ansi_setcolor(char* color)
 
 void ansi_gotoxy(uint8_t x, uint8_t y)
 {
-    prints(ESC "[");
+    prints(ANSI_ESC "[");
     prints(inttostr(y));
     printc(';');
     prints(inttostr(x));

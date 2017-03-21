@@ -18,37 +18,37 @@
 #define STR(x) STR_HELPER(x)
 #endif
 
-#define ESC                 "\x1b"
+#define ANSI_ESC            "\x1b"
 
-#define ANSI_CLEAR_LINE     ESC "[K"
-#define ANSI_CLEAR_SCREEN   ESC "[2J"
+#define ANSI_CLEAR_LINE     ANSI_ESC "[K"
+#define ANSI_CLEAR_SCREEN   ANSI_ESC "[2J"
 
-#define ANSI_RESET          ESC "[0m"
+#define ANSI_RESET          ANSI_ESC "[0m"
 
-#define ANSI_FG_RED         ESC "[31m"
-#define ANSI_FG_GREEN       ESC "[32m"
-#define ANSI_FG_YELLOW      ESC "[33m"
-#define ANSI_FG_BLUE        ESC "[34m"
-#define ANSI_FG_MAGENTA     ESC "[35m"
-#define ANSI_FG_CYAN        ESC "[36m"
-#define ANSI_FG_WHITE       ESC "[37m"
+#define ANSI_FG_RED         ANSI_ESC "[31m"
+#define ANSI_FG_GREEN       ANSI_ESC "[32m"
+#define ANSI_FG_YELLOW      ANSI_ESC "[33m"
+#define ANSI_FG_BLUE        ANSI_ESC "[34m"
+#define ANSI_FG_MAGENTA     ANSI_ESC "[35m"
+#define ANSI_FG_CYAN        ANSI_ESC "[36m"
+#define ANSI_FG_WHITE       ANSI_ESC "[37m"
 
-#define ANSI_BG_BLACK       ESC "[40m"
-#define ANSI_BG_RED         ESC "[41m"
-#define ANSI_BG_GREEN       ESC "[42m"
-#define ANSI_BG_YELLOW      ESC "[43m"
-#define ANSI_BG_BLUE        ESC "[44m"
-#define ANSI_BG_MAGENTA     ESC "[45m"
-#define ANSI_BG_CYAN        ESC "[46m"
-#define ANSI_BG_WHITE       ESC "[47m"
+#define ANSI_BG_BLACK       ANSI_ESC "[40m"
+#define ANSI_BG_RED         ANSI_ESC "[41m"
+#define ANSI_BG_GREEN       ANSI_ESC "[42m"
+#define ANSI_BG_YELLOW      ANSI_ESC "[43m"
+#define ANSI_BG_BLUE        ANSI_ESC "[44m"
+#define ANSI_BG_MAGENTA     ANSI_ESC "[45m"
+#define ANSI_BG_CYAN        ANSI_ESC "[46m"
+#define ANSI_BG_WHITE       ANSI_ESC "[47m"
 
-#define ANSI_BEGIN_GRAPHICAL    ESC "(0"
-#define ANSI_END_GRAPHICAL      ESC "(B"
+#define ANSI_BEGIN_GRAPHICAL    ANSI_ESC "(0"
+#define ANSI_END_GRAPHICAL      ANSI_ESC "(B"
 
-#define ANSI_CURSOR_UP(i)       ESC "[" STR(i) "A"
-#define ANSI_CURSOR_DOWN(i)     ESC "[" STR(i) "B"
-#define ANSI_CURSOR_RIGHT(i)    ESC "[" STR(i) "C"
-#define ANSI_CURSOR_LEFT(i)     ESC "[" STR(i) "D"
-#define ANSI_CURSOR_TO(x, y)    ESC "[" STR(y) ";" STR(x) "H"
+#define ANSI_CURSOR_UP(i)       ANSI_ESC "[" STR(i) "A"
+#define ANSI_CURSOR_DOWN(i)     ANSI_ESC "[" STR(i) "B"
+#define ANSI_CURSOR_RIGHT(i)    ANSI_ESC "[" STR(i) "C"
+#define ANSI_CURSOR_LEFT(i)     ANSI_ESC "[" STR(i) "D"
+#define ANSI_CURSOR_TO(x, y)    ANSI_ESC "[" STR(y) ";" STR(x) "H"
 
 #endif
