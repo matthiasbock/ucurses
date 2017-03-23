@@ -47,6 +47,11 @@ void slider_draw(slider_t*);
 void slider_select(slider_t*);
 
 /**
+ * Set slider to new value and redraw
+ */
+void slider_set_value(slider_t*, float);
+
+/**
  * Mark slider unselected and redraw
  */
 void slider_deselect(slider_t*);
@@ -54,11 +59,11 @@ void slider_deselect(slider_t*);
 /**
  * Decrease slider value by stepsize and redraw
  */
-bool slider_decrement(slider_t*);
+void slider_decrement(slider_t*);
 
 /**
  * Increase slider value by stepsize and redraw
  */
-bool slider_increment(slider_t*);
+void slider_increment(slider_t*);
 
 #endif

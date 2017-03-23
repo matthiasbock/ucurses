@@ -30,32 +30,24 @@ void slider_draw(
     prints(ANSI_END_GRAPHICAL);
 }
 
-bool slider_decrement(slider_t* slider)
+void slider_set_value(slider_t* slider, float value)
 {
-    // decrease value
-    if (slider->value == slider->value_min)
-        return false;
-    slider->value -= slider->stepsize;
+    slider->value = value;
     if (slider->value < slider->value_min)
         slider->value = slider->value_min;
-
-    // redraw element
-    slider_draw(slider);
-    return true;
-}
-
-bool slider_increment(slider_t* slider)
-{
-    // increase value
-    if (slider->value == slider->value_max)
-        return false;
-    slider->value += slider->stepsize;
     if (slider->value > slider->value_max)
         slider->value = slider->value_max;
-
-    // redraw element
     slider_draw(slider);
-    return true;
+}
+
+inline void slider_decrement(slider_t* slider)
+{
+    slider_set_value(slider, slider->value - slider->stepsize);
+}
+
+inline void slider_increment(slider_t* slider)
+{
+    slider_set_value(slider, slider->value + slider->stepsize);
 }
 
 inline void slider_select(slider_t* slider)
