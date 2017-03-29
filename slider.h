@@ -34,12 +34,26 @@ typedef struct
     float    value_max;
     float    value;
     float    stepsize;
+
+    uint8_t  x_marker;
+    uint8_t  x_marker_previously;
 } slider_t;
 
 /**
  * Draw slider to terminal
  */
 void slider_draw(slider_t*);
+
+/**
+ * Re-calculates the X marker position from the current value
+ */
+void slider_calculate_marker_position(slider_t*);
+
+/**
+ * Re-calculates marker position
+ * and -if necessary- re-draws slider
+ */
+void slider_refresh(slider_t*);
 
 /**
  * Mark slider selected and redraw
