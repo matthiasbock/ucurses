@@ -5,27 +5,22 @@ void slider_draw(
     slider_t* slider
     )
 {
+    ansi_gotoxy(slider->x1, slider->y);
+
     if (slider->selected)
         ansi_setcolor(slider->color_selected);
     else
         ansi_setcolor(slider->color);
 
-    ansi_gotoxy(slider->x1, slider->y);
-    prints(ANSI_BEGIN_GRAPHICAL);
-    prints(SLIDER_ARROW_LEFT);
-
+    prints(ANSI_BEGIN_GRAPHICAL SLIDER_ARROW_LEFT);
     for (uint8_t x=slider->x1+1; x<slider->x2; x++)
     {
-        if (x != slider->x_marker)
-            prints(SLIDER_BLOCK);
-        else
+        if (x == slider->x_marker)
             prints(SLIDER_MARKER);
+        else
+            prints(SLIDER_BLOCK);
     }
-
-    ansi_gotoxy(slider->x2, slider->y);
-    prints(SLIDER_ARROW_RIGHT);
-
-    prints(ANSI_END_GRAPHICAL);
+    prints(SLIDER_ARROW_RIGHT ANSI_END_GRAPHICAL);
 }
 
 inline void slider_calculate_marker_position(slider_t* slider)

@@ -29,7 +29,7 @@ void ansi_gotoxy(uint8_t x, uint8_t y)
 #endif // TERMINAL_TYPE_ANSI
 
 
-#ifdef NRF51
+#ifdef EMBEDDED
 /*
  * use UART console on microcontroller
  */
