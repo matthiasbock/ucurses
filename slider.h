@@ -16,6 +16,9 @@
 #include "ucurses_config.h"
 #include "io.h"
 
+// uses special key definitions from ushell.h
+#include <ushell.h>
+
 #define SLIDER_ARROW_LEFT   "<"
 #define SLIDER_ARROW_RIGHT  ">"
 #define SLIDER_BLOCK        "a"
@@ -79,5 +82,11 @@ void slider_decrement(slider_t*);
  * Increase slider value by stepsize and redraw
  */
 void slider_increment(slider_t*);
+
+/**
+ * Handle arrow keys: modify slider value and redraw
+ * return true, if key was handled
+ */
+bool slider_keystroke_handler(slider_t* slider, uint32_t key);
 
 #endif

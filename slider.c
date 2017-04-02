@@ -67,3 +67,45 @@ inline void slider_deselect(slider_t* slider)
     slider->selected = false;
     slider_draw(slider);
 }
+
+// evaluate slider-specific keys
+bool slider_keystroke_handler(slider_t* slider, uint32_t key)
+{
+    switch (key)
+    {
+        case '-':
+            slider_decrement(slider);
+            break;
+
+        case '+':
+            slider_increment(slider);
+            break;
+
+        case KEY_PAGEUP:
+        case '9': // num pad
+            slider_set_value(slider, slider->value + 5*slider->stepsize);
+            break;
+
+        case KEY_PAGEDOWN:
+        case '3': // num pad
+            slider_set_value(slider, slider->value - 5*slider->stepsize);
+            break;
+
+        case KEY_POS1:
+        case '7': // num pad
+            slider_set_value(slider, slider->value_min);
+            break;
+
+        case KEY_END:
+        case '1': // num pad
+            slider_set_value(slider, slider->value_max);
+            break;
+
+        default:
+            // key unhandled
+            return false;
+    }
+
+    // key was handled
+    return true;
+}
