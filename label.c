@@ -10,4 +10,6 @@ void label_draw(
     ansi_gotoxy(label->x, label->y);
 
     prints(label->text);
+
+    prints("  " ANSI_RESET);
 }
