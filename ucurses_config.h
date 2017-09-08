@@ -16,4 +16,10 @@
 //#define BOX_STYLE_ANSI
 //#define BOX_STYLE_UTF8
 
+/*
+ * Configure the slider style
+ */
+#define SLIDER_STYLE_SIMPLE
+//#define SLIDER_STYLE_ANSI
+
 #endif

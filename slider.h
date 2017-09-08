@@ -19,10 +19,19 @@
 // uses special key definitions from ushell.h
 #include <ushell.h>
 
+#ifdef SLIDER_STYLE_SIMPLE
+#define SLIDER_ARROW_LEFT   "["
+#define SLIDER_ARROW_RIGHT  "]"
+#define SLIDER_BLOCK        "-"
+#define SLIDER_MARKER       "#"
+#endif
+
+#ifdef SLIDER_STYLE_ANSI
 #define SLIDER_ARROW_LEFT   "<"
 #define SLIDER_ARROW_RIGHT  ">"
 #define SLIDER_BLOCK        "a"
 #define SLIDER_MARKER       " "
+#endif
 
 typedef struct
 {
