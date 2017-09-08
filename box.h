@@ -32,6 +32,16 @@ void box_draw(box_t*);
 #define BOX_SPACE              " "
 #endif
 
+#ifdef BOX_STYLE_SIMPLE2
+#define BOX_CORNER_LOWER_RIGHT "+"
+#define BOX_CORNER_UPPER_RIGHT "+"
+#define BOX_CORNER_UPPER_LEFT  "+"
+#define BOX_CORNER_LOWER_LEFT  "+"
+#define BOX_EDGE_HORIZONTAL    "-"
+#define BOX_EDGE_VERTICAL      "|"
+#define BOX_SPACE              " "
+#endif
+
 #ifdef BOX_STYLE_ANSI
 #define BOX_CORNER_LOWER_RIGHT "\x6a"
 #define BOX_CORNER_UPPER_RIGHT "\x6b"

@@ -12,8 +12,8 @@
 /*
  * Configure the box style to use
  */
-//#define BOX_STYLE_SIMPLE
-#define BOX_STYLE_ANSI
+#define BOX_STYLE_SIMPLE2
+//#define BOX_STYLE_ANSI
 //#define BOX_STYLE_UTF8
 
 #endif
