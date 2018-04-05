@@ -38,6 +38,8 @@ bool navigation_keystroke_handler(navigation_t* navigation, uint32_t key)
         case TYPE_BUTTON:
             button_deselect( (button_t*) navigation->selectables[previously_selected].element );
             break;
+        default:
+            break;
     }
 
     // highlight now selected element
@@ -51,6 +53,8 @@ bool navigation_keystroke_handler(navigation_t* navigation, uint32_t key)
             break;
         case TYPE_BUTTON:
             button_select( (button_t*) navigation->selectables[navigation->selected].element );
+            break;
+        default:
             break;
     }
 
